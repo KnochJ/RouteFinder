@@ -22,10 +22,10 @@ namespace RouteFinder.Controllers
         [Route("")]
         public ContentResult Default()
         {
-            return Content("Enter a 3-digit Identifier at the end of the URL.");
+            return Content("Enter a 3-letter Identifier at the end of the URL.");
         }
 
-        // Endpoint for grabbing the 3-digit code in the url
+        // Endpoint for grabbing the 3-letter code in the url
         [HttpGet]
         [Route("{identifier}")]
         public IActionResult Get(string identifier)
