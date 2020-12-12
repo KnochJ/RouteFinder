@@ -8,7 +8,7 @@ namespace RouteFinder.Graphs
     public class Graph
     {
         // List of Vertices that the graph holds
-        public List<Vertex> graphVerts { get; set; } = new List<Vertex>();
+        public List<Vertex> GraphVerts { get; set; } = new List<Vertex>();
 
         public Graph()
         {
@@ -16,25 +16,25 @@ namespace RouteFinder.Graphs
         }
         public Graph(int size, Vertex start, Vertex finish)
         {
-            Vertex source = start;
-            Vertex dest = finish;
-            int graphSize = size;
+            Vertex Source = start;
+            Vertex Dest = finish;
+            int GraphSize = size;
         }
 
         /// <summary>
         /// holds the number of vertices in the graph
         /// </summary>
-        public int graphSize { get; set; }
+        public int GraphSize { get; set; }
 
         /// <summary>
         /// Vertex object representing the start vertex
         /// </summary>
-        public Vertex source { get; set; }
+        public Vertex Source { get; set; }
 
         /// <summary>
         /// Vertex object representing the goal/destination vertex
         /// </summary>
-        public Vertex dest { get; set; }
+        public Vertex Dest { get; set; }
 
     }
 }

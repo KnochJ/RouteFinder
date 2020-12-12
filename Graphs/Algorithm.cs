@@ -20,7 +20,7 @@ namespace RouteFinder.Graphs
             // implemented BFS using a queue
             Queue<Vertex> vertQueue = new Queue<Vertex>();
             // Queue up the first node (USA), not always?
-            vertQueue.Enqueue(g.source);
+            vertQueue.Enqueue(g.Source);
 
             // continue to run while we have vertices in the queue
             while (vertQueue != null)
@@ -35,20 +35,20 @@ namespace RouteFinder.Graphs
                 // and begin checking if it's the destination
                 // otherwise we run through its adjacent vertices
                 Vertex u = vertQueue.Dequeue();
-                if (u.vName == g.dest.vName)
+                if (u.VName == g.Dest.VName)
                 {
                     return u; // we found the destination
                 }
-                foreach (Vertex v in u.adjacencyList)
+                foreach (Vertex v in u.AdjacencyList)
                 {
-                    if (v.visited == false)
+                    if (v.Visited == false)
                     {
                         // set visit as discovered, increment the distance,
                         // set the prev to the vertex we traveled from
                         // add this v to the queue
-                        v.distance = u.distance + 1;
-                        v.prev = u;
-                        v.visited = true;
+                        v.Distance = u.Distance + 1;
+                        v.Prev = u;
+                        v.Visited = true;
                         vertQueue.Enqueue(v);
                     }
                 }

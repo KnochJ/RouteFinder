@@ -14,7 +14,7 @@ namespace RouteFinder.Graphs
         /// </summary>
         public static void AddVertex(Vertex v, Graph g)
         {
-            g.graphVerts.Add(v);
+            g.GraphVerts.Add(v);
         }
 
 
@@ -24,7 +24,7 @@ namespace RouteFinder.Graphs
         /// </summary>
         public static void AddUniEdge(Vertex fromVertex, Vertex toVertex)
         {
-            fromVertex.adjacencyList.Add(toVertex);
+            fromVertex.AdjacencyList.Add(toVertex);
         }
 
 
@@ -34,8 +34,8 @@ namespace RouteFinder.Graphs
         /// </summary>
         public static void AddBiDirEdge(Vertex fromVertex, Vertex toVertex)
         {
-            fromVertex.adjacencyList.Add(toVertex);
-            toVertex.adjacencyList.Add(fromVertex);
+            fromVertex.AdjacencyList.Add(toVertex);
+            toVertex.AdjacencyList.Add(fromVertex);
         }
 
 
@@ -45,12 +45,12 @@ namespace RouteFinder.Graphs
         public static List<string> GetPath(Vertex destVertex)
         {
             List<string> path = new List<string>();
-            while (destVertex.prev != null)
+            while (destVertex.Prev != null)
             {
-                path.Add(destVertex.vName);
-                destVertex = destVertex.prev;
+                path.Add(destVertex.VName);
+                destVertex = destVertex.Prev;
             }
-            path.Add(destVertex.vName);
+            path.Add(destVertex.VName);
             path.Reverse();  // reverse to format: USA -> ... ->
             return path;
         }
@@ -83,16 +83,16 @@ namespace RouteFinder.Graphs
 
             // Creating our vertices and adding their 
             // edges, then adding to the graph.
-            usa.vName = "USA";
-            canada.vName = "CAN";
-            mexico.vName = "MEX";
-            belize.vName = "BLZ";
-            guatemala.vName = "GTM";
-            elsalvador.vName = "SLV";
-            honduras.vName = "HND";
-            nicuragua.vName = "NIC";
-            costarica.vName = "CRI";
-            panama.vName = "PAN";
+            usa.VName = "USA";
+            canada.VName = "CAN";
+            mexico.VName = "MEX";
+            belize.VName = "BLZ";
+            guatemala.VName = "GTM";
+            elsalvador.VName = "SLV";
+            honduras.VName = "HND";
+            nicuragua.VName = "NIC";
+            costarica.VName = "CRI";
+            panama.VName = "PAN";
 
             // Add vertices to the graph
             AddVertex(usa, g);
@@ -117,18 +117,18 @@ namespace RouteFinder.Graphs
             AddBiDirEdge(nicuragua, costarica);
             AddBiDirEdge(panama, costarica);
 
-            g.graphSize = 10; // graph size not used now
-            g.source = usa;  // USA is always the start
-            usa.visited = true; // mark start as visited
-            usa.distance = 0;
+            g.GraphSize = 10; // graph size not used now
+            g.Source = usa;  // USA is always the start
+            usa.Visited = true; // mark start as visited
+            usa.Distance = 0;
 
             // Here we want to check if the Vertex even exists
             // in the graph. Could do checks for full names?
-            foreach (Vertex v in g.graphVerts)
+            foreach (Vertex v in g.GraphVerts)
             {
-                if (v.vName == code)
+                if (v.VName == code)
                 {
-                    g.dest = v;
+                    g.Dest = v;
                     return true;
                 }
             }
