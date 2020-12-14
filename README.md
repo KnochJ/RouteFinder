@@ -3,7 +3,7 @@
 
 RouteFinder is an web API which determines truck routes when given a three-letter code for trucks operating in North America. I developed the API in Visual Studio using .NET Core and I deployed to Azure. I created a controller that has an endpoint looking for a three-letter code entered at the end of the URL and determines the best route for the truck. The result is then constructed into a JSON object and returned as a response to the user.
 
-To determine the best route, I developed my own Graph/Vertex classes and constructed a graph with each country as an individual vertex in the graph. With this graph, I also utilized breadth-first-search to determine the best route from the starting country (USA) to the destination country (ranging from Canada down to Panama).
+To determine the best route, I developed my own Graph/Vertex classes and constructed a graph with each country as an individual vertex in the graph. With this graph, I also utilized breadth-first search to determine the best route from the starting country (USA) to the destination country (ranging from Canada down to Panama).
 
 URL: https://jjkroutefinder.azurewebsites.net/RouteFinder/
 
