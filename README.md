@@ -5,7 +5,6 @@ RouteFinder is a Web API which determines truck routes when given a three-letter
 
 To determine the best route, I developed my own Graph/Vertex classes and constructed a graph with each country as an individual vertex in the graph. With this graph, I also utilized breadth-first search to determine the best route from the starting country (USA) to the destination country (ranging from Canada down to Panama).
 
-URL: https://jjkroutefinder.azurewebsites.net/RouteFinder/
 
 #### Enter any of the following three-letter codes to the end of the URL:
 CAN, USA, MEX, BLZ, GTM, SLV, HND, NIC, CRI, PAN
